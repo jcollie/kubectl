@@ -1,7 +1,7 @@
 FROM alpine:3.14
 ARG TARGETPLATFORM
 ARG BUILDPLATFORM
-RUN "I am running on $BUILDPLATFORM, building for $TARGETPLATFORM"
+RUN echo "I am running on $BUILDPLATFORM, building for $TARGETPLATFORM"
 RUN apk update --no-cache && \
     apk add --no-cache --virtual .run-deps ca-certificates curl jq && \
     VERSION=$(curl -L -s https://dl.k8s.io/release/stable.txt) && \
