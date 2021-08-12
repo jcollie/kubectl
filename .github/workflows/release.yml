@@ -20,4 +20,4 @@ jobs:
         with:
           push: true
           platforms: linux/amd64
-          tags: jcollie/kubectl:latest
+          tags: ghcr.io/jcollie/kubectl:latest
