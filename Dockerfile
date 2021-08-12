@@ -1,5 +1,7 @@
-FROM --platform=${TARGETPLATFORM} alpine:3.14
-
+ARG TARGETPLATFORM
+ARG BUILDPLATFORM
+FROM --platform=${BUILDPLATFORM} alpine:3.14
+RUN "I am running on $BUILDPLATFORM, building for $TARGETPLATFORM"
 RUN apk update --no-cache && \
     apk add --no-cache --virtual .run-deps ca-certificates curl jq && \
     VERSION=$(curl -L -s https://dl.k8s.io/release/stable.txt) && \
